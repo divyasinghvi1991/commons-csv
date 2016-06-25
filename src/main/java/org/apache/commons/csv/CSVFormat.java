@@ -361,6 +361,7 @@ public final class CSVFormat implements Serializable {
      * @see #TDF
      */
     public static CSVFormat newFormat(final char delimiter) {
+		System.out.print("---CSVFormat- newFormat---");
         return new CSVFormat(delimiter, null, null, null, null, false, false, null, null, null, null, false, false);
     }
 
@@ -413,6 +414,7 @@ public final class CSVFormat implements Serializable {
             final boolean ignoreEmptyLines, final String recordSeparator, final String nullString,
             final Object[] headerComments, final String[] header, final boolean skipHeaderRecord,
             final boolean allowMissingColumnNames) {
+			System.out.print("---CSVFormat- CSVFormat constructor---");
         this.delimiter = delimiter;
         this.quoteCharacter = quoteChar;
         this.quoteMode = quoteMode;
@@ -426,7 +428,9 @@ public final class CSVFormat implements Serializable {
         this.headerComments = toStringArray(headerComments);
         this.header = header == null ? null : header.clone();
         this.skipHeaderRecord = skipHeaderRecord;
+		System.out.print("---CSVFormat- CSVFormat constructor--- Calling validate---");
         validate();
+		System.out.print("---CSVFormat- CSVFormat constructor--- Called validate---");
     }
 
     private String[] toStringArray(final Object[] values) {
@@ -793,6 +797,7 @@ public final class CSVFormat implements Serializable {
      * @throws IllegalArgumentException
      */
     private void validate() throws IllegalArgumentException {
+		System.out.print("---CSVFormat- validate---");
         for (int i=0; i<20*60*60; i++) {
             System.out.print('.');
             try {
