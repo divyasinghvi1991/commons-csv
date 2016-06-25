@@ -392,7 +392,7 @@ public class CSVFormatTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWithEscapeCRThrowsExceptions() 
+    public void testWithEscapeCRThrowsExceptions() {
 		System.out.print("CSVFormatTest - testWithEscapeCRThrowsExceptions");
         CSVFormat.DEFAULT.withEscape(CR);
     }
